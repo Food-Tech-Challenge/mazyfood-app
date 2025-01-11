@@ -1,0 +1,10 @@
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/AyfoodApplication.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/adapters/driven/Infra.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/adapters/driver/Api.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/application/aplication.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/application/repository/IAuthenticationRepository.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/application/useCases/AutenticateUseCase.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/application/useCases/PedidoUseCase.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/domain/Dominio.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/domain/Entity/Pedido.java
+/home/yan/Documentos/FIAP/ayfood/src/main/java/com/ayfood/ayfood/core/domain/Entity/Produto.java
