@@ -1,4 +1,4 @@
-package com.ayfood.ayfood.core.domain.Entity;
+package com.ayfood.ayfood.core.domain.entity;
 
 import lombok.Getter;
 
@@ -23,8 +23,8 @@ public class Cliente {
         return new Cliente(cpf, null, null);
     }
 
-    public static Cliente completo(String nome, String email) {
-        return new Cliente(null, nome, email);
+    public static Cliente completo(String cpf, String nome, String email) {
+        return new Cliente(cpf, nome, email);
     }
 
 }

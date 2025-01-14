@@ -1,4 +1,4 @@
-package com.ayfood.ayfood.core.domain.Entity.Pedido;
+package com.ayfood.ayfood.core.domain.entity.pedido;
 
 import java.util.Objects;
 

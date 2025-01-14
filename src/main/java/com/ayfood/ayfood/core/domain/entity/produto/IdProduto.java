@@ -1,4 +1,4 @@
-package com.ayfood.ayfood.core.domain.Entity.Produto;
+package com.ayfood.ayfood.core.domain.entity.produto;
 
 import java.util.Objects;
 
