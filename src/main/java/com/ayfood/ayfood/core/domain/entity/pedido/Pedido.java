@@ -23,4 +23,5 @@ public class Pedido {
         this.produtos.add(produto);
     }
 
+    protected Pedido() {}
 }

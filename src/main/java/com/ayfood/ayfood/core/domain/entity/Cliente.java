@@ -27,4 +27,5 @@ public class Cliente {
         return new Cliente(cpf, nome, email);
     }
 
+    protected Cliente() {}
 }

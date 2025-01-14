@@ -1,4 +1,4 @@
-package com.ayfood.ayfood.core.application.repository;
+package com.ayfood.ayfood.core.application.out;
 
 import com.ayfood.ayfood.core.domain.entity.Cliente;
 import com.ayfood.ayfood.core.domain.entity.pedido.Pedido;

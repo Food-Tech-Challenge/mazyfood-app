@@ -1,6 +1,6 @@
-package com.ayfood.ayfood.core.application.useCases;
+package com.ayfood.ayfood.core.application.in;
 
-import com.ayfood.ayfood.core.application.repository.ICriarPedidoRepository;
+import com.ayfood.ayfood.core.application.out.ICriarPedidoRepository;
 import com.ayfood.ayfood.core.domain.entity.Cliente;
 import com.ayfood.ayfood.core.domain.entity.pedido.Pedido;
 
