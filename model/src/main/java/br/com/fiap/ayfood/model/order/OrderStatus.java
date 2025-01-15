@@ -1,6 +1,6 @@
-package br.com.fiap.ayfood.model.pedido;
+package br.com.fiap.ayfood.model.order;
 
-public enum StatusPedido {
+public enum OrderStatus {
     INICIADO,
     RECEBIDO,
     EM_PREPARO,

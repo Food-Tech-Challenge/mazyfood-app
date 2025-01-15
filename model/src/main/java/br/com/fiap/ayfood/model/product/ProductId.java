@@ -1,10 +1,10 @@
-package br.com.fiap.ayfood.model.produto;
+package br.com.fiap.ayfood.model.product;
 
 import java.util.Objects;
 
-public record IdProduto(String value) {
+public record ProductId(String value) {
 
-    public IdProduto {
+    public ProductId {
         Objects.requireNonNull(value);
         if (value.isEmpty()) {
             throw new IllegalArgumentException("IdProduto não pode ser vazio");
