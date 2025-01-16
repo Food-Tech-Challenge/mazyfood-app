@@ -1,7 +1,7 @@
-package br.com.fiap.ayfood.application.service.Order;
+package br.com.fiap.ayfood.application.service.order;
 
-import br.com.fiap.ayfood.application.port.in.Order.AddProductToOrderUseCase;
-import br.com.fiap.ayfood.application.port.in.Order.ProductNotFoundException;
+import br.com.fiap.ayfood.application.port.in.order.AddProductToOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.order.ProductNotFoundException;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
 import br.com.fiap.ayfood.model.customer.Customer;

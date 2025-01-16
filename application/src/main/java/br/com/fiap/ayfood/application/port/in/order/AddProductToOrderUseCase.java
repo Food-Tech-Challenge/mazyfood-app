@@ -1,7 +1,6 @@
-package br.com.fiap.ayfood.application.port.in.Order;
+package br.com.fiap.ayfood.application.port.in.order;
 
 import br.com.fiap.ayfood.model.customer.Customer;
-import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.product.ProductId;
 import br.com.fiap.ayfood.model.order.Order;
 
