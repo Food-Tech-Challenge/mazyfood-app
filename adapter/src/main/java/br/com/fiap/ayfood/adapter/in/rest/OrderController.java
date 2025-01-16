@@ -7,10 +7,10 @@ import br.com.fiap.ayfood.model.order.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import br.com.fiap.ayfood.adapter.out.inmemory.InMemoryOrderRepository;
-import br.com.fiap.ayfood.application.port.in.Order.CreateOrderUseCase;
+import br.com.fiap.ayfood.adapter.out.persistence.inmemory.InMemoryOrderRepository;
+import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
-import br.com.fiap.ayfood.application.service.Order.CreateOrderService;
+import br.com.fiap.ayfood.application.service.order.CreateOrderService;
 
 @Controller
 @RequestMapping("/orders")

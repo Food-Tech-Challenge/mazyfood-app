@@ -1,6 +1,6 @@
-package br.com.fiap.ayfood.application.service.Product;
+package br.com.fiap.ayfood.application.service.product;
 
-import br.com.fiap.ayfood.application.port.in.Product.FilterProductByCategoryUseCase;
+import br.com.fiap.ayfood.application.port.in.product.GetProductByCategoryUseCase;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
 import br.com.fiap.ayfood.model.product.Category;
 import br.com.fiap.ayfood.model.product.Product;
@@ -8,11 +8,11 @@ import br.com.fiap.ayfood.model.product.Product;
 import java.util.List;
 import java.util.Objects;
 
-public class FilterProductByCategoryService implements FilterProductByCategoryUseCase {
+public class GetProductByCategoryService implements GetProductByCategoryUseCase {
 
     private final ProductRepository productRepository;
 
-    public FilterProductByCategoryService(ProductRepository productRepository) {
+    public GetProductByCategoryService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

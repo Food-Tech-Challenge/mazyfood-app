@@ -1,4 +1,4 @@
-package br.com.fiap.ayfood.adapter.out.inmemory;
+package br.com.fiap.ayfood.adapter.out.persistence.inmemory;
 
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.customer.CustomerId;
