@@ -12,15 +12,15 @@ public class Product {
     private String nome;
     private Category category;
     private String descricao;
-    private double preco;
+    private Valor valor;
     private String imagem;
 
-    public Product(ProductId productId, String nome, Category category, String descricao, double preco, String imagem) {
+    public Product(ProductId productId, String nome, Category category, String descricao, Valor valor, String imagem) {
         this.id = productId;
         this.nome = nome;
         this.category = category;
         this.descricao = descricao;
-        this.preco = preco;
+        this.valor = valor;
         this.imagem = imagem;
     }
 

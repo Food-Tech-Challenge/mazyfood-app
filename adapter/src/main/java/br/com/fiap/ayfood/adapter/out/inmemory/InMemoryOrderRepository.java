@@ -1,6 +1,7 @@
 package br.com.fiap.ayfood.adapter.out.inmemory;
 
 import br.com.fiap.ayfood.model.customer.Customer;
+import br.com.fiap.ayfood.model.customer.CustomerId;
 import org.springframework.stereotype.Repository;
 import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.order.Order;
@@ -22,7 +23,7 @@ public class InMemoryOrderRepository implements OrderRepository {
     @Override
     public void save(Order order) {
         if (order.getId() == null) {
-            order.setId(new OrderId(String.valueOf(orders.size())));
+            order.setId(new OrderId(orders.size()));
         };
         orders.put(order.getId(), order);
     }

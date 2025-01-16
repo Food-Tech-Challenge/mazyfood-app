@@ -1,7 +1,6 @@
 package br.com.fiap.ayfood.adapter.in.rest;
 
 import br.com.fiap.ayfood.adapter.in.rest.dto.CreateOrderRequest;
-import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.adapter.in.rest.dto.OrderResponse;
 import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.order.Order;
@@ -9,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import br.com.fiap.ayfood.adapter.out.inmemory.InMemoryOrderRepository;
-import br.com.fiap.ayfood.application.port.in.CreateOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.Order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
-import br.com.fiap.ayfood.application.service.CreateOrderService;
+import br.com.fiap.ayfood.application.service.Order.CreateOrderService;
 
 @Controller
 @RequestMapping("/orders")

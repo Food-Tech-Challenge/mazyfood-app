@@ -6,5 +6,5 @@ import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.order.OrderStatus;
 import lombok.Getter;
 
-public record CreateOrderRequest(String customerId) {
+public record CreateOrderRequest(int customerId) {
 }

@@ -1,10 +1,10 @@
-package br.com.fiap.ayfood.application.service;
+package br.com.fiap.ayfood.application.service.Order;
 
 
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.order.Order;
-import br.com.fiap.ayfood.application.port.in.CreateOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.Order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 
 import java.util.Objects;

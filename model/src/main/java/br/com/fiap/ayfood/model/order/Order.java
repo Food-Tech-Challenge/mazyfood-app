@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Order {
     private OrderId id;
     private Customer customer;
-    private List<Product> products;
+    private List<OrderProduct> products;
     private OrderStatus status;
 
     public Order(Customer customer) {
@@ -23,7 +23,11 @@ public class Order {
         this.status = OrderStatus.INICIADO;
     }
 
-    public CustomerId getCustomerId() {
-        return this.getCustomer().getId();
+    public void addProduct(Product product, int quantity) {
+        products.add(new OrderProduct(product, quantity));
+    }
+
+    public List<OrderProduct> getProducts() {
+        return List.copyOf(products);
     }
 }
