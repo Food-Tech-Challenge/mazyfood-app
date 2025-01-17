@@ -24,6 +24,10 @@ public class Product {
         this.imagem = imagem;
     }
 
+    public int getId() {
+        return this.id.value();
+    }
+
     protected Product() {
     }
 }
