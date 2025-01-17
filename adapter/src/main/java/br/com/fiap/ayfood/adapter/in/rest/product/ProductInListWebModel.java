@@ -9,7 +9,7 @@ public record ProductInListWebModel(
 
     public static ProductInListWebModel fromDomainModel(Product product) {
         return new ProductInListWebModel(
-                product.getId(), product.getNome(), product.getCategory(), product.getDescricao(), product.getValor(), product.getImagem());
+                product.getProductId(), product.getNome(), product.getCategory(), product.getDescricao(), product.getValor(), product.getImagem());
 
     }
 }

@@ -1,4 +1,4 @@
-package br.com.fiap.ayfood.adapter.in.rest;
+package br.com.fiap.ayfood.adapter.in.rest.order;
 
 import br.com.fiap.ayfood.adapter.in.rest.dto.CreateOrderRequest;
 import br.com.fiap.ayfood.adapter.in.rest.dto.OrderResponse;
@@ -7,22 +7,18 @@ import br.com.fiap.ayfood.model.order.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import br.com.fiap.ayfood.adapter.out.persistence.inmemory.InMemoryOrderRepository;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
-import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
-import br.com.fiap.ayfood.application.service.order.CreateOrderService;
 
 @Controller
 @RequestMapping("/orders")
-public class OrderController {
+public class CreateOrderController {
     private final CreateOrderUseCase createOrderUseCase;
 
-    public OrderController() {
-        OrderRepository orderRepository = new InMemoryOrderRepository();
-        this.createOrderUseCase = new CreateOrderService(orderRepository);
+    public CreateOrderController(CreateOrderUseCase createOrderUseCase) {
+        this.createOrderUseCase = createOrderUseCase;
     }
 
-    @PostMapping("/new")
+    @PostMapping("/create")
     ResponseEntity<OrderResponse> createOrder(
             @RequestBody CreateOrderRequest createOrderRequest
     ) {

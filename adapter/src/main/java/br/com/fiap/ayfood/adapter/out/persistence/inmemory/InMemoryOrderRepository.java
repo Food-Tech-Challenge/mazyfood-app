@@ -2,6 +2,7 @@ package br.com.fiap.ayfood.adapter.out.persistence.inmemory;
 
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.customer.CustomerId;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.order.Order;
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+@ConditionalOnProperty(name = "persistence", havingValue = "inmemory", matchIfMissing = true)
 @Repository
 public class InMemoryOrderRepository implements OrderRepository {
 
@@ -29,8 +31,7 @@ public class InMemoryOrderRepository implements OrderRepository {
     }
 
     @Override
-    public Optional<Order> findByCustomer(Customer customer) {
-        Map.Entry<OrderId, Order> entry = orders.entrySet().iterator().next();
-        return Optional.ofNullable(entry.getValue());
+    public Optional<Order> findById(OrderId orderId) {
+        return Optional.ofNullable(orders.get(orderId));
     }
 }

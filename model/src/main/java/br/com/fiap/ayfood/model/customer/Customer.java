@@ -17,8 +17,8 @@ public class Customer {
         this.email = email;
     }
 
-    public Customer(CustomerId id) {
-        this.id = id;
+    public Customer(CustomerId customerId) {
+        this.id = customerId;
     }
 
     public static Customer anonimo() {

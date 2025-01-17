@@ -1,6 +1,6 @@
 package br.com.fiap.ayfood.adapter.in.rest.product;
 
-import br.com.fiap.ayfood.application.port.in.order.CategoryNotFoundException;
+import br.com.fiap.ayfood.application.port.in.product.CategoryNotFoundException;
 import br.com.fiap.ayfood.application.port.in.product.GetProductByCategoryUseCase;
 import br.com.fiap.ayfood.model.product.Category;
 import br.com.fiap.ayfood.model.product.Product;
