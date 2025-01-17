@@ -29,8 +29,7 @@ public class InMemoryOrderRepository implements OrderRepository {
     }
 
     @Override
-    public Optional<Order> findByCustomer(Customer customer) {
-        Map.Entry<OrderId, Order> entry = orders.entrySet().iterator().next();
-        return Optional.ofNullable(entry.getValue());
+    public Optional<Order> findById(OrderId orderId) {
+        return Optional.ofNullable(orders.get(orderId));
     }
 }
