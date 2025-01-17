@@ -24,8 +24,8 @@ public class Product {
         this.imagem = imagem;
     }
 
-    public int getId() {
-        return this.id.value();
+    public int getProductId() {
+        return this.getId().value();
     }
 
     protected Product() {

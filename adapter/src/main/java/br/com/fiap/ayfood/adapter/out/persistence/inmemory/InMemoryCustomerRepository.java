@@ -3,6 +3,7 @@ package br.com.fiap.ayfood.adapter.out.persistence.inmemory;
 import br.com.fiap.ayfood.application.port.out.persistence.CustomerRepository;
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.customer.CustomerId;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
 import java.util.Locale;
@@ -10,6 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+@ConditionalOnProperty(name = "persistence", havingValue = "inmemory", matchIfMissing = true)
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository {
 

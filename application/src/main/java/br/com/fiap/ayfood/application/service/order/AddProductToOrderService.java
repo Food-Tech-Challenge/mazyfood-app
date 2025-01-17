@@ -1,11 +1,11 @@
 package br.com.fiap.ayfood.application.service.order;
 
 import br.com.fiap.ayfood.application.port.in.order.AddProductToOrderUseCase;
-import br.com.fiap.ayfood.application.port.in.order.ProductNotFoundException;
+import br.com.fiap.ayfood.application.port.in.product.ProductNotFoundException;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
-import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.order.Order;
+import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.product.Product;
 import br.com.fiap.ayfood.model.product.ProductId;
 
@@ -20,10 +20,9 @@ public class AddProductToOrderService implements AddProductToOrderUseCase {
     }
 
     @Override
-    public Order addProductToOrder(Customer customer, ProductId productId, int quantity)
-        throws ProductNotFoundException {
+    public Order addProductToOrder(OrderId orderId, ProductId productId, int quantity) throws ProductNotFoundException {
+        Order order = orderRepository.findById(orderId).orElseThrow(ProductNotFoundException::new);
         Product product = productRepository.findById(productId).orElseThrow(ProductNotFoundException::new);
-        Order order = orderRepository.findByCustomer(customer).orElseGet(() -> new Order(customer));
         order.addProduct(product, quantity);
         orderRepository.save(order);
         return order;
