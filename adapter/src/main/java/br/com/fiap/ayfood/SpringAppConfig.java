@@ -2,6 +2,7 @@ package br.com.fiap.ayfood;
 
 import br.com.fiap.ayfood.application.port.in.customer.CreateCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.customer.GetCustomerUseCase;
+import br.com.fiap.ayfood.application.port.in.order.AddProductToOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.GetOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.payment.PayOrderUseCase;
@@ -12,6 +13,7 @@ import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
 import br.com.fiap.ayfood.application.service.customer.CreateCustomerService;
 import br.com.fiap.ayfood.application.service.customer.GetCustomerService;
+import br.com.fiap.ayfood.application.service.order.AddProductToOrderService;
 import br.com.fiap.ayfood.application.service.order.CreateOrderService;
 import br.com.fiap.ayfood.application.service.order.GetOrderService;
 import br.com.fiap.ayfood.application.service.order.payment.PayOrderService;
@@ -60,6 +62,11 @@ public class SpringAppConfig {
     @Bean
     DeleteProductUseCase getDeleteProductUseCase() {
         return new DeleteProductService(productRepository);
+    }
+
+    @Bean
+    AddProductToOrderUseCase addProductToOrderUseCase() {
+        return new AddProductToOrderService(orderRepository, productRepository);
     }
 
     @Bean

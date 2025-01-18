@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -17,7 +19,7 @@ public class OrderProduct {
         this.quantity = quantity + value;
     }
 
-    public Price total() {
-        return product.getPrice().multiply(quantity);
+    public BigDecimal getTotal() {
+        return product.getPrice().multiply(quantity).value();
     }
 }
