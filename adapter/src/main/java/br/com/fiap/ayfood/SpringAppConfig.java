@@ -33,7 +33,7 @@ public class SpringAppConfig {
 
     @Bean
     CreateOrderUseCase getCartUseCase() {
-        return new CreateOrderService(orderRepository);
+        return new CreateOrderService(orderRepository, customerRepository);
     }
 
     @Bean
