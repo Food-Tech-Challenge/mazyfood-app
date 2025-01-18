@@ -44,6 +44,12 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public List<Product> filterProductByCategory(Category category) {
-        return List.of();
+        return products.values().stream()
+                .filter(product -> matchesQuery(product, category))
+                .toList();
+    }
+
+    private boolean matchesQuery(Product product, Category category) {
+        return product.getCategory() == category;
     }
 }

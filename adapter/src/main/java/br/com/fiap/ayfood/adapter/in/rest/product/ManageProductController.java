@@ -36,7 +36,7 @@ public class ManageProductController {
     public ResponseEntity<ProductResponseModel> createProduct(@RequestBody ProductRequestModel productRequestModel) {
         Category category = Category.valueOf(productRequestModel.category());
         Price price = Price.of(productRequestModel.price());
-        Product product = createProductUseCase.createProduct(productRequestModel.name(), category, productRequestModel.category(), price, productRequestModel.image());
+        Product product = createProductUseCase.createProduct(productRequestModel.name(), category, productRequestModel.description(), price, productRequestModel.image());
         ProductResponseModel productResponseModel = ProductResponseModel.fromDomain(product);
         return ResponseEntity.ok(productResponseModel);
     }
@@ -54,7 +54,7 @@ public class ManageProductController {
         ProductId productId = new ProductId(id);
         Category category = Category.valueOf(productRequestModel.category());
         Price price = Price.of(productRequestModel.price());
-        Product product = editProductUseCase.editProduct(productId, productRequestModel.name(), category, productRequestModel.category(), price, productRequestModel.image());
+        Product product = editProductUseCase.editProduct(productId, productRequestModel.name(), category, productRequestModel.description(), price, productRequestModel.image());
         ProductResponseModel productResponseModel = ProductResponseModel.fromDomain(product);
         return ResponseEntity.ok(productResponseModel);
     }
