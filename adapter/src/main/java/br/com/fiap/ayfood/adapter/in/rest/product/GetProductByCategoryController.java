@@ -23,8 +23,8 @@ public class GetProductByCategoryController {
     }
 
     @GetMapping
-    public List<ProductInListWebModel> getProductByCategory(@RequestParam(value="category", required = true) Category category) {
-
+    public List<ProductInListWebModel> getProductByCategory(@RequestParam(value="category", required = true) String categoryString) {
+        Category category = Category.valueOf(categoryString.toUpperCase());
         List<Product> products;
 
         try {

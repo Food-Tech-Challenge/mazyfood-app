@@ -30,6 +30,11 @@ public class InMemoryProductRepository implements ProductRepository {
     }
 
     @Override
+    public void deleteById(ProductId id) {
+        products.remove(id);
+    }
+
+    @Override
     public Optional<Product> findById(ProductId productId) {
         return Optional.ofNullable(products.get(productId));
     }

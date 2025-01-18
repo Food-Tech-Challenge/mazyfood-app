@@ -14,5 +14,7 @@ public interface ProductRepository {
 
     Optional<Product> findById(ProductId id);
 
+    void deleteById(ProductId id);
+
     List<Product> filterProductByCategory(Category category);
 }
