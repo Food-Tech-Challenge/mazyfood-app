@@ -24,8 +24,12 @@ public class CreateOrderController {
     ResponseEntity<OrderResponse> createOrder(
             @RequestBody CreateOrderRequest createOrderRequest
     ) {
-        CustomerId customerId = new CustomerId(createOrderRequest.customerId());
+        CustomerId customerId = createOrderRequest.customerId()
+                .map(CustomerId::new)
+                .orElse(null);
+
         Order order = createOrderUseCase.createOrder(customerId);
+
         return ResponseEntity.ok(OrderResponse.fromDomain(order));
     }
 }

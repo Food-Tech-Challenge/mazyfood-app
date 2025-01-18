@@ -29,12 +29,16 @@ public class InMemoryCustomerRepository implements CustomerRepository {
     }
 
     @Override
+    public Optional<Customer> findById(CustomerId customerId) {
+        return Optional.ofNullable(customers.get(customerId));
+    }
+
+    @Override
     public Optional<Customer> findByCpf(String cpf) {
-        String cpfLowerCase = cpf.toLowerCase(Locale.ROOT);
-        return customers.values().stream().filter(customer -> matchesCpfQuery(customer, cpfLowerCase)).findFirst();
+        return customers.values().stream().filter(customer -> matchesCpfQuery(customer, cpf)).findFirst();
     }
 
     private boolean matchesCpfQuery(Customer customer, String cpfLowerCase) {
-        return customer.getCpf().toLowerCase(Locale.ROOT).equals(cpfLowerCase);
+        return customer.getCpf().equals(cpfLowerCase);
     }
 }
