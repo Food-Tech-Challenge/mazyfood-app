@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/products")
-public class ManageProductController {
+public class ProductController {
     private final CreateProductUseCase createProductUseCase;
     private final GetProductUseCase getProductUseCase;
     private final EditProductUseCase editProductUseCase;
     private final DeleteProductUseCase deleteProductUseCase;
 
-    public ManageProductController(CreateProductUseCase createProductUseCase,
-                                   GetProductUseCase getProductUseCase,
-                                   EditProductUseCase editProductUseCase,
-                                   DeleteProductUseCase deleteProductUseCase) {
+    public ProductController(CreateProductUseCase createProductUseCase,
+                             GetProductUseCase getProductUseCase,
+                             EditProductUseCase editProductUseCase,
+                             DeleteProductUseCase deleteProductUseCase) {
         this.createProductUseCase = createProductUseCase;
         this.getProductUseCase = getProductUseCase;
         this.editProductUseCase = editProductUseCase;
