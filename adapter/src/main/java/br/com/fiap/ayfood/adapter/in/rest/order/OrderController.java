@@ -2,22 +2,26 @@ package br.com.fiap.ayfood.adapter.in.rest.order;
 
 import br.com.fiap.ayfood.adapter.in.rest.order.dto.CreateOrderRequest;
 import br.com.fiap.ayfood.adapter.in.rest.order.dto.OrderResponse;
+import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductResponseModel;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.order.GetOrderUseCase;
 import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.order.Order;
+import br.com.fiap.ayfood.model.order.OrderId;
+import br.com.fiap.ayfood.model.product.Product;
+import br.com.fiap.ayfood.model.product.ProductId;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/orders")
-public class CreateOrderController {
+public class OrderController {
     private final CreateOrderUseCase createOrderUseCase;
+    private final GetOrderUseCase getOrderUseCase;
 
-    public CreateOrderController(CreateOrderUseCase createOrderUseCase) {
+    public OrderController(CreateOrderUseCase createOrderUseCase, GetOrderUseCase getOrderUseCase) {
         this.createOrderUseCase = createOrderUseCase;
+        this.getOrderUseCase = getOrderUseCase;
     }
 
     @PostMapping
@@ -29,7 +33,13 @@ public class CreateOrderController {
                 .orElse(null);
 
         Order order = createOrderUseCase.createOrder(customerId);
+        return ResponseEntity.ok(OrderResponse.fromDomain(order));
+    }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<OrderResponse> getProduct(@PathVariable int id) {
+        OrderId orderId = new OrderId(id);
+        Order order = getOrderUseCase.getOrder(orderId).get();
         return ResponseEntity.ok(OrderResponse.fromDomain(order));
     }
 }
