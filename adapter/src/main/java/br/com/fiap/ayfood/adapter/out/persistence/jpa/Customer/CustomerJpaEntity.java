@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name="Customer")
+@Table(name = "Customer")
 public class CustomerJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

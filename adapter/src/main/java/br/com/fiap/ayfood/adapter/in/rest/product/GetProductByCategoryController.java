@@ -23,20 +23,17 @@ public class GetProductByCategoryController {
     }
 
     @GetMapping
-    public List<ProductInListWebModel> getProductByCategory(@RequestParam(value="category", required = true) String categoryString) {
+    public List<ProductInListWebModel> getProductByCategory(@RequestParam(value = "category", required = true) String categoryString) {
         Category category = Category.valueOf(categoryString.toUpperCase());
         List<Product> products;
 
         try {
             products = getProductByCategoryUseCase.filterProductByCategory(category);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             throw new CategoryNotFoundException("Category '" + category + "' not found.");
         }
 
         return products.stream().map(ProductInListWebModel::fromDomainModel).toList();
     }
-
-
-
 }
 
