@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -24,7 +23,7 @@ public class OrderJpaEntity {
     private CustomerJpaEntity customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderProductJpaEntity> products = new ArrayList<>();
+    private List<OrderProductJpaEntity> products;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

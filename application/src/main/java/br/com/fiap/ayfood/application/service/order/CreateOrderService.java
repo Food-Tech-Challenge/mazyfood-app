@@ -1,7 +1,6 @@
 package br.com.fiap.ayfood.application.service.order;
 
 
-import br.com.fiap.ayfood.application.port.in.customer.CustomerNotFoundException;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.out.persistence.CustomerRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;

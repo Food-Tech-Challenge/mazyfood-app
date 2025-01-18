@@ -25,13 +25,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/customers/create",
+							"raw": "{{BASE_URL}}/customers",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"customers",
-								"create"
+								"customers"
 							]
 						}
 					},
@@ -73,7 +72,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{}",
+							"raw": "{\n    \"customerId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,13 +80,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/create",
+							"raw": "{{BASE_URL}}/orders",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"orders",
-								"create"
+								"orders"
 							]
 						}
 					},
@@ -108,13 +106,106 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/create",
+							"raw": "{{BASE_URL}}/orders",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"orders",
-								"create"
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"X-Tudo\",\n    \"category\": \"LANCHE\",\n    \"description\": \"Hambúrguer, queijo, presunto, bacon, ovo, alface, tomate e maionese.\",\n    \"price\": 12.99,\n    \"image\": \"https://cdn.ayfood.fiap.com.br/images/xtudo.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"X-Tudo Bacon\",\n    \"category\": \"LANCHE\",\n    \"description\": \"Hambúrguer, queijo, presunto, bacon, ovo, alface, tomate e maionese.\",\n    \"price\": 12.99,\n    \"image\": \"https://cdn.ayfood.fiap.com.br/images/xtudo.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/products/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/products/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"products",
+								"1"
 							]
 						}
 					},

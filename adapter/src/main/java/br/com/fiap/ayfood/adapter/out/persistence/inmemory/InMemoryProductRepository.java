@@ -18,13 +18,16 @@ public class InMemoryProductRepository implements ProductRepository {
 
     private final Map<ProductId, Product> products = new ConcurrentHashMap<>();
 
+    private int idSequence = 1;
+
     public InMemoryProductRepository() {
     }
 
     @Override
     public void save(Product product) {
         if (product.getId() == null) {
-            product.setId(new ProductId(products.size() + 1));
+            product.setId(new ProductId(idSequence));
+            idSequence += 1;
         }
         products.put(product.getId(), product);
     }
@@ -41,6 +44,12 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public List<Product> filterProductByCategory(Category category) {
-        return List.of();
+        return products.values().stream()
+                .filter(product -> matchesQuery(product, category))
+                .toList();
+    }
+
+    private boolean matchesQuery(Product product, Category category) {
+        return product.getCategory() == category;
     }
 }

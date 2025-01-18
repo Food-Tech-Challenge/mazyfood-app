@@ -6,7 +6,6 @@ import br.com.fiap.ayfood.model.customer.CustomerId;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
-import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,13 +16,16 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 
     private final Map<CustomerId, Customer> customers = new ConcurrentHashMap<>();
 
+    private int idSequence = 1;
+
     public InMemoryCustomerRepository() {
     }
 
     @Override
     public void save(Customer customer) {
         if (customer.getId() == null) {
-            customer.setId(new CustomerId(customers.size() + 1));
+            customer.setId(new CustomerId(idSequence));
+            idSequence += 1;
         }
         customers.put(customer.getId(), customer);
     }

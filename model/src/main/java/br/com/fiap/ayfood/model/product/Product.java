@@ -1,33 +1,41 @@
 package br.com.fiap.ayfood.model.product;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Product {
 
     private ProductId id;
-    private String nome;
+    private String name;
     private Category category;
-    private String descricao;
-    private Valor valor;
-    private String imagem;
+    private String description;
+    private Price price;
+    private String image;
 
-    public Product(ProductId productId, String nome, Category category, String descricao, Valor valor, String imagem) {
-        this.id = productId;
-        this.nome = nome;
+    public Product(String name, Category category, String description, Price price, String image) {
+        this.name = name;
         this.category = category;
-        this.descricao = descricao;
-        this.valor = valor;
-        this.imagem = imagem;
-    }
-
-    protected Product() {
+        this.description = description;
+        this.price = price;
+        this.image = image;
     }
 
     public int getProductId() {
         return this.getId().value();
+    }
+
+    public String getCategoryName() {
+        return this.getCategory().name();
+    }
+
+    public BigDecimal getPriceDecimal() {
+        return this.getPrice().value();
     }
 }
