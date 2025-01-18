@@ -5,12 +5,12 @@ import br.com.fiap.ayfood.adapter.in.rest.customer.dto.CustomerResponse;
 import br.com.fiap.ayfood.application.port.in.customer.CreateCustomerUseCase;
 import br.com.fiap.ayfood.model.customer.Customer;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/customers")
 public class CreateCustomerController {
     private final CreateCustomerUseCase createCustomerUseCase;
@@ -19,7 +19,7 @@ public class CreateCustomerController {
         this.createCustomerUseCase = createCustomerUseCase;
     }
 
-    @PostMapping("/create")
+    @PostMapping
     ResponseEntity<CustomerResponse> createCustomer(
             @RequestBody CreateCustomerRequest createCustomerRequest
     ) {

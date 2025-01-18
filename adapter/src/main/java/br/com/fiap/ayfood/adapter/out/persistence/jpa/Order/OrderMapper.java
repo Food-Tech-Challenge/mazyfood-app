@@ -13,7 +13,7 @@ final class OrderMapper {
     static OrderJpaEntity toJpaEntity(Order order) {
         OrderJpaEntity orderJpaEntity = new OrderJpaEntity();
         orderJpaEntity.setProducts(
-                order.getProducts().stream().map(orderProduct -> toJpaEntity(orderJpaEntity, orderProduct)).toList()
+                order.orderProducts().stream().map(orderProduct -> toJpaEntity(orderJpaEntity, orderProduct)).toList()
         );
         orderJpaEntity.setStatus(order.getStatus());
         return orderJpaEntity;

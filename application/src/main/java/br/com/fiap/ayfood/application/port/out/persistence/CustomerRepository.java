@@ -10,6 +10,7 @@ public interface CustomerRepository {
     void save(Customer customer);
 
     Optional<Customer> findById(CustomerId customerId);
+
     Optional<Customer> findByCpf(String cpf);
 
 }

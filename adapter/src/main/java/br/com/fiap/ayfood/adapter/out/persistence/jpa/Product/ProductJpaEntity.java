@@ -19,20 +19,20 @@ public class ProductJpaEntity {
     private int id;
 
     @Column(nullable = false)
-    private String nome;
+    private String name;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Category category;
 
     @Column(nullable = false)
-    private String descricao;
+    private String description;
 
     @Column(nullable = false)
-    private BigDecimal preco;
+    private BigDecimal price;
 
     @Column(nullable = false)
-    private String imagem;
+    private String image;
 
 
 }

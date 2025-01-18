@@ -3,20 +3,14 @@ package br.com.fiap.ayfood;
 import br.com.fiap.ayfood.application.port.in.customer.CreateCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.customer.GetCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
-import br.com.fiap.ayfood.application.port.in.product.CreateProductUseCase;
-import br.com.fiap.ayfood.application.port.in.product.DeleteProductUseCase;
-import br.com.fiap.ayfood.application.port.in.product.EditProductUseCase;
-import br.com.fiap.ayfood.application.port.in.product.GetProductByCategoryUseCase;
+import br.com.fiap.ayfood.application.port.in.product.*;
 import br.com.fiap.ayfood.application.port.out.persistence.CustomerRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
 import br.com.fiap.ayfood.application.service.customer.CreateCustomerService;
 import br.com.fiap.ayfood.application.service.customer.GetCustomerService;
 import br.com.fiap.ayfood.application.service.order.CreateOrderService;
-import br.com.fiap.ayfood.application.service.product.CreateProductService;
-import br.com.fiap.ayfood.application.service.product.DeleteProductService;
-import br.com.fiap.ayfood.application.service.product.EditProductService;
-import br.com.fiap.ayfood.application.service.product.GetProductByCategoryService;
+import br.com.fiap.ayfood.application.service.product.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -39,6 +33,11 @@ public class SpringAppConfig {
     @Bean
     CreateProductUseCase getCreateProductUseCase() {
         return new CreateProductService(productRepository);
+    }
+
+    @Bean
+    GetProductUseCase getProductUseCase() {
+        return new GetProductService(productRepository);
     }
 
     @Bean

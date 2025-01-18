@@ -2,27 +2,26 @@ package br.com.fiap.ayfood.model.order;
 
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.product.Product;
+import br.com.fiap.ayfood.model.product.ProductId;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class Order {
+    private final Map<ProductId, OrderProduct> products = new LinkedHashMap<>();
     private OrderId id;
     private Customer customer;
-    private List<OrderProduct> products;
     private OrderStatus status;
 
     public Order(Customer customer) {
         this.customer = customer;
-        this.products = new ArrayList<>();
         this.status = OrderStatus.INICIADO;
     }
 
     public Order() {
-        this.products = new ArrayList<>();
         this.status = OrderStatus.INICIADO;
     }
 
@@ -30,11 +29,13 @@ public class Order {
         return this.getId().value();
     }
 
-    public void addProduct(Product product, int quantity) {
-        products.add(new OrderProduct(product, quantity));
+    public List<OrderProduct> orderProducts() {
+        return List.copyOf(products.values());
     }
 
-    public List<OrderProduct> getProducts() {
-        return List.copyOf(products);
+    public void addProduct(Product product, int quantity) {
+        products
+                .computeIfAbsent(product.getId(), ignored -> new OrderProduct(product))
+                .increaseQuantityBy(quantity);
     }
 }

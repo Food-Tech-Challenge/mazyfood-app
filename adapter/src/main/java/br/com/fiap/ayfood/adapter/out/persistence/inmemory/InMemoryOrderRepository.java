@@ -16,13 +16,16 @@ public class InMemoryOrderRepository implements OrderRepository {
 
     private final Map<OrderId, Order> orders = new ConcurrentHashMap<>();
 
+    private int idSequence = 1;
+
     public InMemoryOrderRepository() {
     }
 
     @Override
     public void save(Order order) {
         if (order.getId() == null) {
-            order.setId(new OrderId(orders.size() + 1));
+            order.setId(new OrderId(idSequence));
+            idSequence += 1;
         }
         orders.put(order.getId(), order);
     }

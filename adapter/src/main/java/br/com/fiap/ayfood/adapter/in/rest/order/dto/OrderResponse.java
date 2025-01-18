@@ -1,8 +1,6 @@
 package br.com.fiap.ayfood.adapter.in.rest.order.dto;
 
-import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.order.Order;
-import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.order.OrderStatus;
 
 import java.util.Optional;
