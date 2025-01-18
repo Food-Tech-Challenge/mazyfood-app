@@ -16,8 +16,8 @@ public class ManageProductController {
     private final DeleteProductUseCase deleteProductUseCase;
 
     public ManageProductController(CreateProductUseCase createProductUseCase,
-                             EditProductUseCase editProductUseCase,
-                             DeleteProductUseCase deleteProductUseCase) {
+                                   EditProductUseCase editProductUseCase,
+                                   DeleteProductUseCase deleteProductUseCase) {
         this.createProductUseCase = createProductUseCase;
         this.editProductUseCase = editProductUseCase;
         this.deleteProductUseCase = deleteProductUseCase;

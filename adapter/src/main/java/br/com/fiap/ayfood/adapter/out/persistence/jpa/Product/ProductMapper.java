@@ -4,11 +4,11 @@ import br.com.fiap.ayfood.model.product.Product;
 import br.com.fiap.ayfood.model.product.ProductId;
 import br.com.fiap.ayfood.model.product.Valor;
 
-import java.util.Currency;
 import java.util.List;
 
 public class ProductMapper {
-    private ProductMapper() {}
+    private ProductMapper() {
+    }
 
     static ProductJpaEntity toJpaEntity(Product product) {
         ProductJpaEntity jpaEntity = new ProductJpaEntity();

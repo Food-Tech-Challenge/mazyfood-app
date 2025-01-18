@@ -24,10 +24,10 @@ public class Product {
         this.imagem = imagem;
     }
 
-    public int getProductId() {
-        return this.getId().value();
+    protected Product() {
     }
 
-    protected Product() {
+    public int getProductId() {
+        return this.getId().value();
     }
 }

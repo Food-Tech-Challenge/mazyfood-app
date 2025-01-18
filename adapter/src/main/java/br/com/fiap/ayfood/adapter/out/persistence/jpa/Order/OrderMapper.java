@@ -1,17 +1,14 @@
 package br.com.fiap.ayfood.adapter.out.persistence.jpa.Order;
 
 import br.com.fiap.ayfood.adapter.out.persistence.jpa.Product.ProductJpaEntity;
+import br.com.fiap.ayfood.adapter.out.persistence.jpa.Product.ProductMapper;
 import br.com.fiap.ayfood.model.customer.Customer;
-import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.order.Order;
 import br.com.fiap.ayfood.model.order.OrderProduct;
-import br.com.fiap.ayfood.adapter.out.persistence.jpa.Product.ProductMapper;
-
-
-import java.util.List;
 
 final class OrderMapper {
-    private OrderMapper() {}
+    private OrderMapper() {
+    }
 
     static OrderJpaEntity toJpaEntity(Order order) {
         OrderJpaEntity orderJpaEntity = new OrderJpaEntity();

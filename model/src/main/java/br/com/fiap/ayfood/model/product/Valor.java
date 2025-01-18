@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public record Valor(BigDecimal valor) {
 
-    public static Valor of (BigDecimal valor) {
+    public static Valor of(BigDecimal valor) {
         return new Valor(valor);
     }
 

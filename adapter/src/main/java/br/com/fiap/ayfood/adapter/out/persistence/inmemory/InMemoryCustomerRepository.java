@@ -23,8 +23,8 @@ public class InMemoryCustomerRepository implements CustomerRepository {
     @Override
     public void save(Customer customer) {
         if (customer.getId() == null) {
-            customer.setId(new CustomerId(customers.size()));
-        };
+            customer.setId(new CustomerId(customers.size() + 1));
+        }
         customers.put(customer.getId(), customer);
     }
 
@@ -34,17 +34,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
         return customers.values().stream().filter(customer -> matchesCpfQuery(customer, cpfLowerCase)).findFirst();
     }
 
-    @Override
-    public Optional<Customer> findByEmail(String email) {
-        String emailLowerCase = email.toLowerCase(Locale.ROOT);
-        return customers.values().stream().filter(customer -> matchesEmailQuery(customer, emailLowerCase)).findFirst();
-    }
-
     private boolean matchesCpfQuery(Customer customer, String cpfLowerCase) {
         return customer.getCpf().toLowerCase(Locale.ROOT).equals(cpfLowerCase);
-    }
-
-    private boolean matchesEmailQuery(Customer customer, String emailLowerCase) {
-        return customer.getEmail().toLowerCase(Locale.ROOT).equals(emailLowerCase);
     }
 }

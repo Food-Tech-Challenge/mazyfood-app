@@ -1,11 +1,11 @@
 package ayfood.Pedido;
 
 import br.com.fiap.ayfood.model.customer.Customer;
-import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.order.Order;
+import br.com.fiap.ayfood.model.order.OrderId;
 import br.com.fiap.ayfood.model.product.Category;
-import br.com.fiap.ayfood.model.product.ProductId;
 import br.com.fiap.ayfood.model.product.Product;
+import br.com.fiap.ayfood.model.product.ProductId;
 import br.com.fiap.ayfood.model.product.Valor;
 import org.junit.jupiter.api.Test;
 

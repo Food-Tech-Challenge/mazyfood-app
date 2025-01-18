@@ -20,4 +20,8 @@ public class Customer {
     public Customer(CustomerId customerId) {
         this.id = customerId;
     }
+
+    public int getCustomerId() {
+        return this.getId().value();
+    }
 }

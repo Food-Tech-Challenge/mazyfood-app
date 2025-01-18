@@ -1,6 +1,7 @@
 package br.com.fiap.ayfood;
 
-import br.com.fiap.ayfood.application.port.in.customer.IdentifyCustomerUseCase;
+import br.com.fiap.ayfood.application.port.in.customer.CreateCustomerUseCase;
+import br.com.fiap.ayfood.application.port.in.customer.GetCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.product.CreateProductUseCase;
 import br.com.fiap.ayfood.application.port.in.product.DeleteProductUseCase;
@@ -9,7 +10,8 @@ import br.com.fiap.ayfood.application.port.in.product.GetProductByCategoryUseCas
 import br.com.fiap.ayfood.application.port.out.persistence.CustomerRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
-import br.com.fiap.ayfood.application.service.customer.IdentifyCustomerService;
+import br.com.fiap.ayfood.application.service.customer.CreateCustomerService;
+import br.com.fiap.ayfood.application.service.customer.GetCustomerService;
 import br.com.fiap.ayfood.application.service.order.CreateOrderService;
 import br.com.fiap.ayfood.application.service.product.CreateProductService;
 import br.com.fiap.ayfood.application.service.product.DeleteProductService;
@@ -24,34 +26,43 @@ public class SpringAppConfig {
 
     @Autowired
     OrderRepository orderRepository;
+    @Autowired
+    ProductRepository productRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     @Bean
     CreateOrderUseCase getCartUseCase() {
         return new CreateOrderService(orderRepository);
     }
 
-    @Autowired
-    ProductRepository productRepository;
+    @Bean
+    CreateProductUseCase getCreateProductUseCase() {
+        return new CreateProductService(productRepository);
+    }
 
     @Bean
-    CreateProductUseCase getCreateProductUseCase() {return new CreateProductService(productRepository);}
+    EditProductUseCase getEditProductUseCase() {
+        return new EditProductService(productRepository);
+    }
 
     @Bean
-    EditProductUseCase getEditProductUseCase() {return new EditProductService(productRepository);}
-
-    @Bean
-    DeleteProductUseCase getDeleteProductUseCase() {return new DeleteProductService(productRepository);}
+    DeleteProductUseCase getDeleteProductUseCase() {
+        return new DeleteProductService(productRepository);
+    }
 
     @Bean
     GetProductByCategoryUseCase getProductByCategoryUseCase() {
         return new GetProductByCategoryService(productRepository);
     }
 
-    @Autowired
-    CustomerRepository customerRepository;
+    @Bean
+    CreateCustomerUseCase getCreateCustomerUseCase() {
+        return new CreateCustomerService(customerRepository);
+    }
 
     @Bean
-    IdentifyCustomerUseCase getIdentifyCustomerUseCase() {
-        return new IdentifyCustomerService(customerRepository);
+    GetCustomerUseCase getIdentifyCustomerUseCase() {
+        return new GetCustomerService(customerRepository);
     }
 }

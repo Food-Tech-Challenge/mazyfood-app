@@ -1,9 +1,9 @@
 package br.com.fiap.ayfood.adapter.out.persistence.jpa.Product;
 
 import br.com.fiap.ayfood.application.port.out.persistence.ProductRepository;
+import br.com.fiap.ayfood.model.product.Category;
 import br.com.fiap.ayfood.model.product.Product;
 import br.com.fiap.ayfood.model.product.ProductId;
-import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
@@ -28,12 +28,21 @@ public class JpaProductRepository implements ProductRepository {
         jpaProductSpringDataRepository.save(ProductMapper.toJpaEntity(product));
     }
 
+    @Override
+    public Optional<Product> findById(ProductId id) {
+        return Optional.empty();
+    }
 
     @Override
+    public void deleteById(ProductId id) {
+
+    }
+
     @Transactional
-    public List<Product> filterProductByCategory(String queryString) {
+    @Override
+    public List<Product> filterProductByCategory(Category category) {
         List<ProductJpaEntity> entities =
-                jpaProductSpringDataRepository.filterProductByCategory("%" + queryString + "%");
+                jpaProductSpringDataRepository.filterProductByCategory("%" + category + "%");
 
         return ProductMapper.toModelEntities(entities);
     }
