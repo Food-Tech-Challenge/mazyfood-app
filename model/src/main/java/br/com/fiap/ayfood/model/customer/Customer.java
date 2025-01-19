@@ -21,7 +21,10 @@ public class Customer {
         this.id = customerId;
     }
 
-    public int getCustomerId() {
-        return this.getId().value();
+    public Integer getCustomerId() {
+        if (this.getId() != null) {
+            return this.getId().value();
+        }
+        return null;
     }
 }

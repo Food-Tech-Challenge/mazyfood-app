@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@ConditionalOnProperty(name = "persistence", havingValue = "psql")
+@ConditionalOnProperty(name = "persistence", havingValue = "postgresql", matchIfMissing = true)
 @Repository
 public class JpaProductRepository implements ProductRepository {
 

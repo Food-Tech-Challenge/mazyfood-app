@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@ConditionalOnProperty(name = "persistance", havingValue = "psql")
+@ConditionalOnProperty(name = "persistance", havingValue = "postgresql", matchIfMissing = true)
 @Repository
 public class JpaOrderRepository implements OrderRepository {
 
@@ -22,7 +22,9 @@ public class JpaOrderRepository implements OrderRepository {
 
     @Override
     @Transactional
-    public void save(Order order) {jpaOrderSpringDataRepository.save(OrderMapper.toJpaEntity(order)); }
+    public void save(Order order) {
+        jpaOrderSpringDataRepository.save(OrderMapper.toJpaEntity(order));
+    }
 
     @Override
     @Transactional
