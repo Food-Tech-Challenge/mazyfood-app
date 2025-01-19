@@ -18,8 +18,8 @@ public class OrderJpaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "customer_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id", nullable = true)
     private CustomerJpaEntity customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -28,4 +28,5 @@ public class OrderJpaEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus status;
+
 }

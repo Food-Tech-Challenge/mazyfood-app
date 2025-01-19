@@ -23,7 +23,10 @@ public class JpaOrderRepository implements OrderRepository {
     @Override
     @Transactional
     public void save(Order order) {
-        jpaOrderSpringDataRepository.save(OrderMapper.toJpaEntity(order));
+        OrderJpaEntity orderJpaEntity = OrderMapper.toJpaEntity(order);
+        jpaOrderSpringDataRepository.save(orderJpaEntity);
+
+        OrderMapper.updateModelEntity(order, orderJpaEntity);
     }
 
     @Override
@@ -34,7 +37,9 @@ public class JpaOrderRepository implements OrderRepository {
     }
 
     @Override
+    @Transactional
     public List<Order> findAll() {
-        return List.of();
+        List<OrderJpaEntity> entities = jpaOrderSpringDataRepository.findAll();
+        return OrderMapper.toModelEntities(entities);
     }
 }
