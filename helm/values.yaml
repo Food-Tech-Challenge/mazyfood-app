@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: ayfood
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 50
+
+config:
+  APP_ENV: production
+  APP_NAME: ayfood
+
+secret:
+  DB_PASSWORD: ayfood
