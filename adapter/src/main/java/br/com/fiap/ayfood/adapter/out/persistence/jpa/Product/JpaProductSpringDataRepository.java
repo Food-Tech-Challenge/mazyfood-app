@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface JpaProductSpringDataRepository extends JpaRepository<ProductJpaEntity, String> {
 
-    @Query("SELECT p FROM ProductJpaEntity p WHERE p.nome like ?1 or p.descricao like ?1")
+    @Query("SELECT p FROM ProductJpaEntity p WHERE p.name like ?1 or p.description like ?1")
     List<ProductJpaEntity> filterProductByCategory(String name);
 }
