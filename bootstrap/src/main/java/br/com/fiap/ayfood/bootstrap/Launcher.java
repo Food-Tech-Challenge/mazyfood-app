@@ -1,4 +1,4 @@
-package br.com.fiap.ayfood.boostrap;
+package br.com.fiap.ayfood.bootstrap;
 
 import br.com.fiap.ayfood.SpringAppConfig;
 import org.springframework.boot.SpringApplication;

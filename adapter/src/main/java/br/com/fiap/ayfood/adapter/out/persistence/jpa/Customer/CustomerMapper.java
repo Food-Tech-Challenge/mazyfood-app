@@ -1,8 +1,7 @@
 package br.com.fiap.ayfood.adapter.out.persistence.jpa.Customer;
 
 import br.com.fiap.ayfood.model.customer.Customer;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import br.com.fiap.ayfood.model.customer.CustomerId;
 
 import java.util.List;
 
@@ -24,6 +23,7 @@ final class CustomerMapper {
 
     static Customer toModelEntity(CustomerJpaEntity jpaEntity) {
         return new Customer(
+                new CustomerId(jpaEntity.getId()),
                 jpaEntity.getCpf(),
                 jpaEntity.getName(),
                 jpaEntity.getEmail());
