@@ -5,11 +5,15 @@ import br.com.fiap.ayfood.model.customer.CustomerId;
 
 import java.util.List;
 
-final class CustomerMapper {
+public final class CustomerMapper {
     private CustomerMapper() {
     }
 
-    static CustomerJpaEntity toJpaEntity(Customer customer) {
+    public static CustomerJpaEntity toJpaEntity(Customer customer) {
+        if (customer == null) {
+            return null;
+        }
+
         CustomerJpaEntity jpaEntity = new CustomerJpaEntity();
 
         if (customer.getId() != null) {
@@ -21,13 +25,23 @@ final class CustomerMapper {
         return jpaEntity;
     }
 
-    static Customer toModelEntity(CustomerJpaEntity jpaEntity) {
-        return new Customer(
-                new CustomerId(jpaEntity.getId()),
-                jpaEntity.getCpf(),
-                jpaEntity.getName(),
-                jpaEntity.getEmail());
+    public static Customer toModelEntity(CustomerJpaEntity jpaEntity) {
+        Customer customer = new Customer();
+        return updateModelEntity(jpaEntity, customer);
     }
+
+    static Customer updateModelEntity(CustomerJpaEntity jpaEntity, Customer customer) {
+        if (jpaEntity == null) {
+            return null;
+        }
+
+        customer.setId(new CustomerId(jpaEntity.getId()));
+        customer.setCpf(jpaEntity.getCpf());
+        customer.setName(jpaEntity.getName());
+        customer.setEmail(jpaEntity.getEmail());
+        return customer;
+    }
+
 
     static List<Customer> toModelEntities(List<CustomerJpaEntity> jpaEntities) {
         return jpaEntities.stream().map(CustomerMapper::toModelEntity).toList();

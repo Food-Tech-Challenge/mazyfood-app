@@ -22,7 +22,7 @@ public class JpaCustomerCustomerRepository implements CustomerRepository {
     public void save(Customer customer) {
         CustomerJpaEntity customerJpaEntity = CustomerMapper.toJpaEntity(customer);
         jpaCustomerSpringDataRepository.save(customerJpaEntity);
-        customer.setId(new CustomerId(customerJpaEntity.getId()));
+        CustomerMapper.updateModelEntity(customerJpaEntity, customer);
     }
 
     @Override

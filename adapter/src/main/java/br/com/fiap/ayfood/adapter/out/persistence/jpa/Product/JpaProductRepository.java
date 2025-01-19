@@ -25,24 +25,27 @@ public class JpaProductRepository implements ProductRepository {
     @Override
     @Transactional
     public void save(Product product) {
-        jpaProductSpringDataRepository.save(ProductMapper.toJpaEntity(product));
+        ProductJpaEntity productJpaEntity = ProductMapper.toJpaEntity(product);
+        jpaProductSpringDataRepository.save(productJpaEntity);
+        ProductMapper.updateModelEntity(product, productJpaEntity);
     }
 
     @Override
     public Optional<Product> findById(ProductId id) {
-        return Optional.empty();
+        Optional< ProductJpaEntity > productJpaEntity = jpaProductSpringDataRepository.findById(id.value());
+        return productJpaEntity.map(ProductMapper::toModelEntity);
     }
 
     @Override
     public void deleteById(ProductId id) {
-
+        jpaProductSpringDataRepository.deleteById(id.value());
     }
 
     @Transactional
     @Override
     public List<Product> filterProductByCategory(Category category) {
         List<ProductJpaEntity> entities =
-                jpaProductSpringDataRepository.filterProductByCategory("%" + category + "%");
+                jpaProductSpringDataRepository.filterProductByCategory(category);
 
         return ProductMapper.toModelEntities(entities);
     }
