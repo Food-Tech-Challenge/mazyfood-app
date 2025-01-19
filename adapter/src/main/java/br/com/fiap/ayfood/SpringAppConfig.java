@@ -6,6 +6,7 @@ import br.com.fiap.ayfood.application.port.in.order.AddProductToOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.GetAllOrdersUseCase;
 import br.com.fiap.ayfood.application.port.in.order.GetOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.order.UpdateOrderStatusUseCase;
 import br.com.fiap.ayfood.application.port.in.order.payment.PayOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.product.*;
 import br.com.fiap.ayfood.application.port.out.PaymentGateway;
@@ -18,6 +19,7 @@ import br.com.fiap.ayfood.application.service.order.AddProductToOrderService;
 import br.com.fiap.ayfood.application.service.order.CreateOrderService;
 import br.com.fiap.ayfood.application.service.order.GetAllOrdersService;
 import br.com.fiap.ayfood.application.service.order.GetOrderService;
+import br.com.fiap.ayfood.application.service.order.UpdateOrderStatusService;
 import br.com.fiap.ayfood.application.service.order.payment.PayOrderService;
 import br.com.fiap.ayfood.application.service.product.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,5 +96,9 @@ public class SpringAppConfig {
     @Bean
     PayOrderUseCase payOrderUseCase() {
         return new PayOrderService(orderRepository, paymentGateway);
+    }
+
+    @Bean
+    UpdateOrderStatusUseCase updateOrderStatusUseCase() {return new UpdateOrderStatusService(orderRepository);
     }
 }
