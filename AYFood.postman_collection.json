@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cpf\": \"111.222.333-44\",\n    \"name\": \"Create Customer Test\",\n    \"email\": \"customertest@example.com\"\n}",
+							"raw": "{\n    \"cpf\": \"111.222.333-44\",\n    \"name\": \"Customer Test\",\n    \"email\": \"customertest@example.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -71,8 +71,19 @@
 						{
 							"name": "PayOrder",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/orders/1/payment",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"orders",
+										"1",
+										"payment"
+									]
+								}
 							},
 							"response": []
 						}
@@ -136,13 +147,58 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/products/1",
+							"raw": "{{BASE_URL}}/orders/1",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"products",
+								"orders",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductToOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": 2,\n    \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/orders/1/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"orders",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/orders",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"orders"
 							]
 						}
 					},
@@ -160,7 +216,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"X-Tudo\",\n    \"category\": \"LANCHE\",\n    \"description\": \"Hambúrguer, queijo, presunto, bacon, ovo, alface, tomate e maionese.\",\n    \"price\": 12.99,\n    \"image\": \"https://cdn.ayfood.fiap.com.br/images/xtudo.png\"\n}",
+							"raw": "{\n    \"name\": \"X-Tudo\",\n    \"category\": \"LANCHE\",\n    \"description\": \"Hambúrguer, queijo, presunto, ovo, alface, tomate e maionese.\",\n    \"price\": 12.99,\n    \"image\": \"https://cdn.ayfood.fiap.com.br/images/xtudo.png\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -230,13 +286,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/products/1",
+							"raw": "{{BASE_URL}}/products/2",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
 								"products",
-								"1"
+								"2"
 							]
 						}
 					},
