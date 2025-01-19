@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "OrderProduct")
+@Table(name = "order_products")
 public class OrderProductJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

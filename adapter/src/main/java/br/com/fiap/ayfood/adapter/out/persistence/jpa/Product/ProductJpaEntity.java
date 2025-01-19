@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 
 @Entity
-@Table(name = "Product")
+@Table(name = "products")
 public class ProductJpaEntity {
 
     @Id

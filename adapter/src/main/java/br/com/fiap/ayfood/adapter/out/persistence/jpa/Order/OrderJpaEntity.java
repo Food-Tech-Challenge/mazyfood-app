@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 
 @Entity
-@Table(name = "Order")
+@Table(name = "orders")
 public class OrderJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

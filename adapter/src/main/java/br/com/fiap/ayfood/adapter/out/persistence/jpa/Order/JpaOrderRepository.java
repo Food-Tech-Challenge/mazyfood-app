@@ -7,9 +7,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
-@ConditionalOnProperty(name = "persistance", havingValue = "psql", matchIfMissing = true)
+@ConditionalOnProperty(name = "persistance", havingValue = "psql")
 @Repository
 public class JpaOrderRepository implements OrderRepository {
 
@@ -28,6 +29,10 @@ public class JpaOrderRepository implements OrderRepository {
     public Optional<Order> findById(OrderId orderId) {
         Optional<OrderJpaEntity> orderJpaEntity = jpaOrderSpringDataRepository.findById(orderId.value());
         return orderJpaEntity.map(OrderMapper::toModelEntity);
-    };
+    }
 
+    @Override
+    public List<Order> findAll() {
+        return List.of();
+    }
 }
