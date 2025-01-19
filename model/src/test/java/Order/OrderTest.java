@@ -24,8 +24,9 @@ public class OrderTest {
         ProductId productId = new ProductId(1);
         Product product = new Product(productId, "Hamburguer", Category.LANCHE, "lanche fera", new Price(new BigDecimal("10")), "");
         order.addProduct(product, 1);
-        OrderProduct orderProduct = new OrderProduct(product, 1);
-        assertThat(order.getProducts().get(0).getClass()).isEqualTo(orderProduct.getClass());
+        OrderProduct expectedOrderProduct = new OrderProduct(product, 1);
+        OrderProduct actualOrderProduct = order.getProducts().get(productId);
+        assertThat(actualOrderProduct).isNotNull();
+        assertThat(actualOrderProduct.getClass()).isEqualTo(expectedOrderProduct.getClass());
     }
-
 }
