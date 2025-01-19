@@ -3,9 +3,12 @@ package br.com.fiap.ayfood.adapter.out.persistence.inmemory;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.model.order.Order;
 import br.com.fiap.ayfood.model.order.OrderId;
+import br.com.fiap.ayfood.model.product.Category;
+import br.com.fiap.ayfood.model.product.Product;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -33,5 +36,10 @@ public class InMemoryOrderRepository implements OrderRepository {
     @Override
     public Optional<Order> findById(OrderId orderId) {
         return Optional.ofNullable(orders.get(orderId));
+    }
+
+    @Override
+    public List<Order> findAll() {
+        return orders.values().stream().toList();
     }
 }
