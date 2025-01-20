@@ -124,7 +124,6 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 - **Descrição do Problema**: Consulte os documentos para entender os requisitos e o contexto do projeto.
 - Fase 1: [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase1.pdf)
 - Fase 2: [`docs/Pos_tech-Fase2.pdf`](./docs/Pos_tech-Fase2.pdf)
--
 - **Descrição do Problema - Fase 2**: Consulte o documento [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase2.pdf) para
   entender os requisitos e o contexto da fase inicial do projeto.
 

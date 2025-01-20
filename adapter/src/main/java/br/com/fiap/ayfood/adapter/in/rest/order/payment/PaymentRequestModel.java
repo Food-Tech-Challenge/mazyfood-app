@@ -1,4 +1,4 @@
 package br.com.fiap.ayfood.adapter.in.rest.order.payment;
 
-public record PaymentResponseModel(String paymentStatus) {
+public record PaymentRequestModel(String paymentMethod) {
 }

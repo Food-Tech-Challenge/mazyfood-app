@@ -4,6 +4,7 @@ import br.com.fiap.ayfood.application.port.in.customer.CreateCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.customer.GetCustomerUseCase;
 import br.com.fiap.ayfood.application.port.in.order.*;
 import br.com.fiap.ayfood.application.port.in.order.payment.PayOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.order.payment.ReceiveOrderPaymentUseCase;
 import br.com.fiap.ayfood.application.port.in.product.*;
 import br.com.fiap.ayfood.application.port.out.PaymentGateway;
 import br.com.fiap.ayfood.application.port.out.persistence.CustomerRepository;
@@ -13,6 +14,7 @@ import br.com.fiap.ayfood.application.service.customer.CreateCustomerService;
 import br.com.fiap.ayfood.application.service.customer.GetCustomerService;
 import br.com.fiap.ayfood.application.service.order.*;
 import br.com.fiap.ayfood.application.service.order.payment.PayOrderService;
+import br.com.fiap.ayfood.application.service.order.payment.ReceiveOrderPaymentService;
 import br.com.fiap.ayfood.application.service.product.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -93,6 +95,11 @@ public class SpringAppConfig {
     @Bean
     PayOrderUseCase payOrderUseCase() {
         return new PayOrderService(orderRepository, paymentGateway);
+    }
+
+    @Bean
+    ReceiveOrderPaymentUseCase receiveOrderPaymentUseCase() {
+        return new ReceiveOrderPaymentService(orderRepository);
     }
 
     @Bean

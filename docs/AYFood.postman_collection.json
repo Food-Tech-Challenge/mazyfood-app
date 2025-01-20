@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "747fe907-8be2-467f-a207-e7f301ec2c49",
+		"_postman_id": "4145e3c2-95f3-43ae-b6d3-d271080386ae",
 		"name": "AYFood",
 		"description": "FIAP Tech Challenge",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18824718"
+		"_exporter_id": "41083353"
 	},
 	"item": [
 		{
@@ -73,6 +73,15 @@
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"paymentMethod\": \"debit_card\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "{{BASE_URL}}/orders/1/payment",
 									"host": [
@@ -81,6 +90,33 @@
 									"path": [
 										"orders",
 										"1",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ReceivePaymentWebhook",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"orderId\": 1,\n    \"authorized\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/orders/payment",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"orders",
 										"payment"
 									]
 								}
@@ -210,12 +246,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/orders",
+							"raw": "{{BASE_URL}}/orders/ordered",
 							"host": [
 								"{{BASE_URL}}"
 							],
 							"path": [
-								"orders"
+								"orders",
+								"ordered"
 							]
 						}
 					},
