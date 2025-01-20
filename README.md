@@ -122,10 +122,12 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
       detalhes: [Event Storming no Miro](https://miro.com/app/board/uXjVLw047SM=/).
 
 - **Descrição do Problema**: Consulte os documentos para entender os requisitos e o contexto do projeto.
-- Fase 1: [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase1.pdf)
-- Fase 2: [`docs/Pos_tech-Fase2.pdf`](./docs/Pos_tech-Fase2.pdf)
-- **Descrição do Problema - Fase 2**: Consulte o documento [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase2.pdf) para
-  entender os requisitos e o contexto da fase inicial do projeto.
+  - Fase 1: [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase1.pdf)
+  - Fase 2: [`docs/Pos_tech-Fase2.pdf`](./docs/Pos_tech-Fase2.pdf)
+
+- **Documentações e Diagramas - Fase 2**: Consulte o documento [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) para entender os requisitos e contexto da fase 2 do projeto (Kubernetes e Clean Archtecture) 
+
+- **Apresentação da Aplicação**: Acesse o [`link no YouTube`](https://youtu.be/0XZYn2qy22Q) da apresentação. 
 
 ---
 
