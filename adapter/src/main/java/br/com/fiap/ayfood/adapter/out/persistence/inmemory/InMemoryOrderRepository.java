@@ -9,6 +9,7 @@ import br.com.fiap.ayfood.model.order.OrderStatus;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -42,5 +43,26 @@ public class InMemoryOrderRepository implements OrderRepository {
     @Override
     public List<Order> findAll() {
         return orders.values().stream().toList();
+    }
+
+    private Comparator<OrderStatus> getStatusComparator() {
+        return Comparator.comparingInt(status -> switch (status) {
+            case PRONTO -> 1;
+            case EM_PREPARO -> 2;
+            case RECEBIDO -> 3;
+            default -> Integer.MAX_VALUE;
+        });
+    }
+
+    @Override
+    public List<Order> getOrdered() {
+        List<Order> orders = this.findAll();
+        orders = orders.stream()
+                .filter(order -> order.getStatus() != OrderStatus.INICIADO && order.getStatus() != OrderStatus.FINALIZADO)
+                .sorted(Comparator
+                        .comparing(Order::getStatus, getStatusComparator())
+                        .thenComparing(Order::getOrderId))
+                .toList();
+        return orders;
     }
 }

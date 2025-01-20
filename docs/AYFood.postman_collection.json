@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "8488e431-5a22-45bf-9226-7d04e4b7e6d9",
+		"_postman_id": "747fe907-8be2-467f-a207-e7f301ec2c49",
 		"name": "AYFood",
 		"description": "FIAP Tech Challenge",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41083353"
+		"_exporter_id": "18824718"
 	},
 	"item": [
 		{
@@ -189,6 +189,23 @@
 				},
 				{
 					"name": "GetAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/orders",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrderedOrders",
 					"request": {
 						"method": "GET",
 						"header": [],
