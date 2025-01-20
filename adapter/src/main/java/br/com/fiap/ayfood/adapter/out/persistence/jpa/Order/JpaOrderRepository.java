@@ -42,4 +42,9 @@ public class JpaOrderRepository implements OrderRepository {
         List<OrderJpaEntity> entities = jpaOrderSpringDataRepository.findAll();
         return OrderMapper.toModelEntities(entities);
     }
+
+    public List<Order> getOrdered() {
+        List<OrderJpaEntity> entities = jpaOrderSpringDataRepository.getOrderedJpaEntities();
+        return OrderMapper.toModelEntities(entities);
+    }
 }

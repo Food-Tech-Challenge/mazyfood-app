@@ -18,7 +18,6 @@ public class GetAllOrdersService implements GetAllOrdersUseCase {
 
     @Override
     public List<Order> getAllOrders() {
-        List<Order> order = orderRepository.findAll();
-        return order;
+        return orderRepository.findAll();
     }
 }

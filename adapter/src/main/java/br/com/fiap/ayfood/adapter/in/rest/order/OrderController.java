@@ -8,6 +8,7 @@ import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductResponseModel;
 import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.GetAllOrdersUseCase;
 import br.com.fiap.ayfood.application.port.in.order.GetOrderUseCase;
+import br.com.fiap.ayfood.application.port.in.order.GetOrderedOrdersUseCase;
 import br.com.fiap.ayfood.application.port.in.product.CategoryNotFoundException;
 import br.com.fiap.ayfood.model.customer.CustomerId;
 import br.com.fiap.ayfood.model.order.Order;
@@ -26,11 +27,13 @@ public class OrderController {
     private final CreateOrderUseCase createOrderUseCase;
     private final GetOrderUseCase getOrderUseCase;
     private final GetAllOrdersUseCase getAllOrdersUseCase;
+    private final GetOrderedOrdersUseCase getOrderedOrdersUseCase;
 
-    public OrderController(CreateOrderUseCase createOrderUseCase, GetOrderUseCase getOrderUseCase, GetAllOrdersUseCase getAllOrdersUseCase) {
+    public OrderController(CreateOrderUseCase createOrderUseCase, GetOrderUseCase getOrderUseCase, GetAllOrdersUseCase getAllOrdersUseCase, GetOrderedOrdersUseCase getOrderedOrdersUseCase) {
         this.createOrderUseCase = createOrderUseCase;
         this.getOrderUseCase = getOrderUseCase;
         this.getAllOrdersUseCase = getAllOrdersUseCase;
+        this.getOrderedOrdersUseCase = getOrderedOrdersUseCase;
     }
 
     @PostMapping
@@ -55,6 +58,12 @@ public class OrderController {
     @GetMapping
     public List<OrderInListWebModel> getAllOrders() {
         List<Order> orders = getAllOrdersUseCase.getAllOrders();
+        return orders.stream().map(OrderInListWebModel::fromDomainModel).toList();
+    }
+
+    @GetMapping("/ordered")
+    public List<OrderInListWebModel> getOrderedProducts() {
+        List<Order> orders = getOrderedOrdersUseCase.getOrderedOrders();
         return orders.stream().map(OrderInListWebModel::fromDomainModel).toList();
     }
 }
