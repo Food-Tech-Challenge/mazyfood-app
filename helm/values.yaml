@@ -1,0 +1,35 @@
+replicaCount: 2
+
+image:
+  repository: localhost:5000/ayfood
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 50
+
+springBoot:
+  activeProfile: postgresql
+
+database:
+  url: jdbc:postgresql://host.minikube.internal:5432/ayfood
+  username: ayfood
+  password: ayfood
+  driverClassName: org.postgresql.Driver
+
+jpa:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  ddlAuto: update
+  showSql: true
+
+custom:
+  persistence: postgresql
+  paymentGateway: mock
