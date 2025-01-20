@@ -32,7 +32,7 @@ public class JpaProductRepository implements ProductRepository {
 
     @Override
     public Optional<Product> findById(ProductId id) {
-        Optional< ProductJpaEntity > productJpaEntity = jpaProductSpringDataRepository.findById(id.value());
+        Optional<ProductJpaEntity> productJpaEntity = jpaProductSpringDataRepository.findById(id.value());
         return productJpaEntity.map(ProductMapper::toModelEntity);
     }
 

@@ -1,9 +1,9 @@
 package br.com.fiap.ayfood.adapter.out.persistence.jpa.Order;
 
 import br.com.fiap.ayfood.adapter.out.persistence.jpa.Customer.CustomerJpaEntity;
+import br.com.fiap.ayfood.adapter.out.persistence.jpa.Customer.CustomerMapper;
 import br.com.fiap.ayfood.adapter.out.persistence.jpa.Product.ProductJpaEntity;
 import br.com.fiap.ayfood.adapter.out.persistence.jpa.Product.ProductMapper;
-import br.com.fiap.ayfood.adapter.out.persistence.jpa.Customer.CustomerMapper;
 import br.com.fiap.ayfood.model.customer.Customer;
 import br.com.fiap.ayfood.model.order.Order;
 import br.com.fiap.ayfood.model.order.OrderId;
@@ -18,7 +18,7 @@ final class OrderMapper {
     static OrderJpaEntity toJpaEntity(Order order) {
         OrderJpaEntity orderJpaEntity = new OrderJpaEntity();
         CustomerJpaEntity customerJpaEntity = CustomerMapper.toJpaEntity(order.getCustomer());
-        if(order.getId() != null) {
+        if (order.getId() != null) {
             orderJpaEntity.setId(order.getOrderId());
         }
         orderJpaEntity.setCustomer(customerJpaEntity);

@@ -20,7 +20,7 @@ public class PayOrderService implements PayOrderUseCase {
     public boolean processPayment(OrderId orderId) {
         Order order = orderRepository.findById(orderId).get();
         if (order.getStatus() != OrderStatus.INICIADO) {
-            return false; // TODO: Return exception
+            return false;
         }
         boolean paymentIsAuthorized = paymentGateway.authorizePayment();
         if (paymentIsAuthorized) {

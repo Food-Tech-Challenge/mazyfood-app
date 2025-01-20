@@ -71,7 +71,9 @@ public class SpringAppConfig {
     }
 
     @Bean
-    GetOrderedOrdersUseCase getOrderedOrdersUseCase() {return new GetOrderedOrdersService(orderRepository);}
+    GetOrderedOrdersUseCase getOrderedOrdersUseCase() {
+        return new GetOrderedOrdersService(orderRepository);
+    }
 
     @Bean
     GetProductByCategoryUseCase getProductByCategoryUseCase() {
@@ -94,6 +96,7 @@ public class SpringAppConfig {
     }
 
     @Bean
-    UpdateOrderStatusUseCase updateOrderStatusUseCase() {return new UpdateOrderStatusService(orderRepository);
+    UpdateOrderStatusUseCase updateOrderStatusUseCase() {
+        return new UpdateOrderStatusService(orderRepository);
     }
 }

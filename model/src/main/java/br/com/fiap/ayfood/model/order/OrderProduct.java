@@ -1,6 +1,5 @@
 package br.com.fiap.ayfood.model.order;
 
-import br.com.fiap.ayfood.model.product.Price;
 import br.com.fiap.ayfood.model.product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,16 +1,12 @@
 package br.com.fiap.ayfood.adapter.in.rest.order.payment;
 
-import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductRequestModel;
-import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductResponseModel;
-import br.com.fiap.ayfood.application.port.in.order.CreateOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.payment.PayOrderUseCase;
 import br.com.fiap.ayfood.model.order.OrderId;
-import br.com.fiap.ayfood.model.product.Category;
-import br.com.fiap.ayfood.model.product.Price;
-import br.com.fiap.ayfood.model.product.Product;
-import br.com.fiap.ayfood.model.product.ProductId;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/orders")

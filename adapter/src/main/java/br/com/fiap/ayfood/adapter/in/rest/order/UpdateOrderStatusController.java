@@ -2,13 +2,9 @@ package br.com.fiap.ayfood.adapter.in.rest.order;
 
 import br.com.fiap.ayfood.adapter.in.rest.order.dto.OrderRequestModel;
 import br.com.fiap.ayfood.adapter.in.rest.order.dto.OrderResponse;
-import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductRequestModel;
-import br.com.fiap.ayfood.adapter.in.rest.product.dto.ProductResponseModel;
-import br.com.fiap.ayfood.application.port.in.order.GetOrderUseCase;
 import br.com.fiap.ayfood.application.port.in.order.UpdateOrderStatusUseCase;
 import br.com.fiap.ayfood.model.order.Order;
 import br.com.fiap.ayfood.model.order.OrderId;
-import br.com.fiap.ayfood.model.order.OrderStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

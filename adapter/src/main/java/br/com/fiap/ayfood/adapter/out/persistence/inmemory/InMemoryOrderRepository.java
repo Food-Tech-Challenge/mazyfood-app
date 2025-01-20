@@ -3,8 +3,6 @@ package br.com.fiap.ayfood.adapter.out.persistence.inmemory;
 import br.com.fiap.ayfood.application.port.out.persistence.OrderRepository;
 import br.com.fiap.ayfood.model.order.Order;
 import br.com.fiap.ayfood.model.order.OrderId;
-import br.com.fiap.ayfood.model.product.Category;
-import br.com.fiap.ayfood.model.product.Product;
 import br.com.fiap.ayfood.model.order.OrderStatus;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
