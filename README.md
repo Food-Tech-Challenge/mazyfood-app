@@ -127,6 +127,8 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
 - **Documentações e Diagramas - Fase 2**: Consulte o documento [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) para entender os requisitos e contexto da fase 2 do projeto (Kubernetes e Clean Archtecture) 
 
+- **Apresentação da Aplicação**: Acesse o [`link no YouTube`](https://youtu.be/0XZYn2qy22Q) da apresentação. 
+
 ---
 
 ## Participantes
