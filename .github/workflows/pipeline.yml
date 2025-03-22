@@ -9,6 +9,21 @@ on:
       - main
 
 jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+          cache: maven
+
+      - name: Build and Test Application
+        run: |
+          mvn test
+
   build-and-push:
     runs-on: ubuntu-latest
 
@@ -23,17 +38,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: ${{ vars.AWS_REGION }}
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'corretto'
-          java-version: '21'
-          cache: maven
-
-      - name: Build and Test Application
-        run: |
-          mvn clean install -DskipTests=false
 
       - name: Login to Amazon ECR
         id: login-ecr
