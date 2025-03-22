@@ -143,10 +143,10 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 - **Alison Israel - RM358367**  
   *Discord*: @taykarus | E-mail: taykarus@gmail.com
 
-- **José Matheus de Oliveira - RM358854**
+- **José Matheus de Oliveira - RM358854**  
   *Discord*: @jsmatheus | E-mail: matheusoliveira.info@gmail.com
 
-- **Victor Zaniquelli - RM358533**
+- **Victor Zaniquelli - RM358533**  
   *Discord*: @zaniquelli | E-mail: zaniquelli@outlook.com.br
 
 - **Yan Gianini - RM358368**  
