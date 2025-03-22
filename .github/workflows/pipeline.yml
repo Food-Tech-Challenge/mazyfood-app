@@ -25,6 +25,7 @@ jobs:
           mvn test
 
   build-and-push:
+    needs: unit-test
     runs-on: ubuntu-latest
 
     steps:
