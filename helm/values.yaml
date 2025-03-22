@@ -20,7 +20,7 @@ springBoot:
   activeProfile: postgresql
 
 database:
-  url: jdbc:postgresql://host.minikube.internal:5432/mazyfood-db
+  url: jdbc:postgresql://host.minikube.internal:5432/mazyfood
   username: mazyadmin
   password: mazyadmin
   driverClassName: org.postgresql.Driver
