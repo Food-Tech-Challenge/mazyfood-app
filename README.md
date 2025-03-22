@@ -54,7 +54,7 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
 1. **Clonar o repositório**
    ```bash
-   git clone git@github.com:YanGianini/AYFood.git
+   git clone git@github.com:Food-Tech-Challenge/AYFood.git
    cd AYFood
    ```
 
@@ -81,13 +81,13 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
     - **Construir e enviar a imagem para o registro do Minikube**:
       ```bash
-      docker image build -t localhost:5000/ayfood:latest .
-      docker image push localhost:5000/ayfood:latest
+      docker image build -t localhost:5000/mazyfood:latest .
+      docker image push localhost:5000/mazyfood:latest
       ```
 
     - **Deploy com Helm**:
       ```bash
-      helm upgrade --install ayfood helm/
+      helm upgrade --install mazyfood helm/
       ```
 
 4. **Obter o IP e porta do serviço**
@@ -97,7 +97,7 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
       ```
     - **Encontrar a porta do NodePort do serviço**:
       ```bash
-      kubectl get svc ayfood-service -o wide
+      kubectl get svc mazyfood-service -o wide
       ```
 
 5. **Acessar os endpoints da aplicação**
