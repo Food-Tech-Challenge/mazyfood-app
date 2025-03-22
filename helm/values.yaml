@@ -1,12 +1,12 @@
 replicaCount: 2
 
 image:
-  repository: 941298098509.dkr.ecr.us-east-1.amazonaws.com/mazyfood
+  repository: localhost:5000/mazyfood
   tag: latest
   pullPolicy: IfNotPresent
 
 service:
-  type: LoadBalancer
+  type: NodePort
   port: 8080
   targetPort: 8080
 
@@ -20,7 +20,7 @@ springBoot:
   activeProfile: postgresql
 
 database:
-  url: jdbc:postgresql://mazyfood-db.csdrtd9wr0vl.us-east-1.rds.amazonaws.com:5432/mazyfood
+  url: jdbc:postgresql://host.minikube.internal:5432/mazyfood-db
   username: mazyadmin
   password: mazyadmin
   driverClassName: org.postgresql.Driver
