@@ -1,4 +1,4 @@
-# AYFood
+# MazyFood
 
 Tech Challenge Fast Food desenvolvido no curso de Pós-Graduação em Arquitetura de Software na Pós-Tech FIAP.
 
@@ -17,7 +17,7 @@ Tech Challenge Fast Food desenvolvido no curso de Pós-Graduação em Arquitetur
 
 ## Sobre o Projeto
 
-O **AYFood** é uma aplicação desenvolvida em **Spring Boot**, seguindo o padrão de **Arquitetura Hexagonal** para
+O **MazyFood** é uma aplicação desenvolvida em **Spring Boot**, seguindo o padrão de **Arquitetura Hexagonal** para
 garantir maior desacoplamento e facilidade de manutenção. Além da API em Spring Boot, o projeto utiliza o banco de dados
 **PostgreSQL**. Este projeto tem como objetivo oferecer uma base sólida para estudos e aplicação prática de conceitos
 avançados em arquitetura de software.
@@ -54,8 +54,8 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
 1. **Clonar o repositório**
    ```bash
-   git clone git@github.com:Food-Tech-Challenge/AYFood.git
-   cd AYFood
+   git clone git@github.com:Food-Tech-Challenge/mazyfood-app.git 
+   cd mazyfood-app
    ```
 
 2. **Rodar o banco de dados com Docker Compose**
@@ -121,13 +121,20 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
     - **Miro**: Explore o quadro colaborativo no Miro para mais
       detalhes: [Event Storming no Miro](https://miro.com/app/board/uXjVLw047SM=/).
 
+- **Documentação do Banco de dados**: A documentação da Fase 3 da DB se encontra em [`docs/MazyFood_DB_Fase3.pdf`](./docs/MazyFood_DB_Fase3.pdf).
+
 - **Descrição do Problema**: Consulte os documentos para entender os requisitos e o contexto do projeto.
   - Fase 1: [`docs/Pos_tech-Fase1.pdf`](./docs/Pos_tech-Fase1.pdf)
   - Fase 2: [`docs/Pos_tech-Fase2.pdf`](./docs/Pos_tech-Fase2.pdf)
+  - Fase 3: [`docs/Pos_tech-Fase3.pdf`](./docs/Pos_tech-Fase3.pdf)
 
-- **Documentações e Diagramas - Fase 2**: Consulte o documento [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) para entender os requisitos e contexto da fase 2 do projeto (Kubernetes e Clean Archtecture) 
+- **Documentações e Diagramas**: Consulte o documento da respectiva fase para entender o contexto e o que foi alcançado.
+  - Fase 2: [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) (Kubernetes e Clean Archtecture) 
+  - Fase 3: [`docs/MazyFood_Fase3.pdf`](./docs/MazyFood_Fase3.pdf) (Terraform e AWS)
 
-- **Apresentação da Aplicação**: Acesse o [`link no YouTube`](https://youtu.be/0XZYn2qy22Q) da apresentação. 
+- **Apresentação da Aplicação**: Links das apresentações das fases.
+  - Fase 2: [`link no YouTube`](https://youtu.be/0XZYn2qy22Q)
+  - Fase 3: [`link no YouTube`](https://youtu.be/)
 
 ---
 
@@ -135,6 +142,12 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
 - **Alison Israel - RM358367**  
   *Discord*: @taykarus | E-mail: taykarus@gmail.com
+
+- **José Matheus de Oliveira - RM358854**  
+  *Discord*: @jsmatheus | E-mail: matheusoliveira.info@gmail.com
+
+- **Victor Zaniquelli - RM358533**  
+  *Discord*: @zaniquelli | E-mail: zaniquelli@outlook.com.br
 
 - **Yan Gianini - RM358368**  
   *Discord*: @.gianini | E-mail: yangianini@gmail.com
