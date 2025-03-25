@@ -129,12 +129,11 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
   - Fase 3: [`docs/Pos_tech-Fase3.pdf`](./docs/Pos_tech-Fase3.pdf)
 
 - **Documentações e Diagramas**: Consulte o documento da respectiva fase para entender o contexto e o que foi alcançado.
-  - Fase 2: [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) (Kubernetes e Clean Archtecture) 
-  - Fase 3: [`docs/MazyFood_Fase3.pdf`](./docs/MazyFood_Fase3.pdf) (Terraform e AWS)
+  - Fase 2: [`docs/AYFood_Arquitetura.pdf`](./docs/AYFood_Arquitetura.pdf) (Kubernetes e Clean Archtecture)
 
 - **Apresentação da Aplicação**: Links das apresentações das fases.
   - Fase 2: [`link no YouTube`](https://youtu.be/0XZYn2qy22Q)
-  - Fase 3: [`link no YouTube`](https://youtu.be/)
+  - Fase 3: [`link no YouTube`](https://youtu.be/bzZcmUH44bQ)
 
 ---
 
