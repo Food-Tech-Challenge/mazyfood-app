@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4145e3c2-95f3-43ae-b6d3-d271080386ae",
+		"_postman_id": "a5aa670b-1a31-4049-ad50-8e970b20e43d",
 		"name": "AYFood",
 		"description": "FIAP Tech Challenge",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41083353"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -66,66 +65,6 @@
 			"name": "orders",
 			"item": [
 				{
-					"name": "payment",
-					"item": [
-						{
-							"name": "PayOrder",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"paymentMethod\": \"debit_card\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/orders/1/payment",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"orders",
-										"1",
-										"payment"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "ReceivePaymentWebhook",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"orderId\": 1,\n    \"authorized\": true\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_URL}}/orders/payment",
-									"host": [
-										"{{BASE_URL}}"
-									],
-									"path": [
-										"orders",
-										"payment"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "CreateOrder",
 					"request": {
 						"method": "POST",
@@ -140,9 +79,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders",
+							"raw": "{{ORDER_URL}}/orders",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders"
@@ -166,9 +105,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders",
+							"raw": "{{ORDER_URL}}/orders",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders"
@@ -183,9 +122,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/orders/1",
+							"raw": "{{ORDER_URL}}/orders/1",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -202,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"productId\": 2,\n    \"quantity\": 3\n}",
+							"raw": "{\n    \"productId\": 2,\n    \"quantity\": 3,\n    \"price\": \"25.00\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -210,9 +149,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/1/products",
+							"raw": "{{ORDER_URL}}/orders/1/products",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -229,9 +168,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/orders",
+							"raw": "{{ORDER_URL}}/orders",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders"
@@ -246,9 +185,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/orders/ordered",
+							"raw": "{{ORDER_URL}}/orders/ordered",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -259,7 +198,35 @@
 					"response": []
 				},
 				{
-					"name": "UpdateOrderStatusPreparo",
+					"name": "PayOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderId\": 1,\n    \"paymentMethod\": \"debit_card\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ORDER_URL}}/orders/1/payment",
+							"host": [
+								"{{ORDER_URL}}"
+							],
+							"path": [
+								"orders",
+								"1",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOrderStatusEmPreparo",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -273,9 +240,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/1/status",
+							"raw": "{{ORDER_URL}}/orders/1/status",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -301,9 +268,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/1/status",
+							"raw": "{{ORDER_URL}}/orders/1/status",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -329,9 +296,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/orders/1/status",
+							"raw": "{{ORDER_URL}}/orders/1/status",
 							"host": [
-								"{{BASE_URL}}"
+								"{{ORDER_URL}}"
 							],
 							"path": [
 								"orders",
@@ -362,9 +329,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/products",
+							"raw": "{{PRODUCT_URL}}/products",
 							"host": [
-								"{{BASE_URL}}"
+								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"products"
@@ -379,9 +346,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/products/1",
+							"raw": "{{PRODUCT_URL}}/products/1",
 							"host": [
-								"{{BASE_URL}}"
+								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"products",
@@ -406,9 +373,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_URL}}/products/1",
+							"raw": "{{PRODUCT_URL}}/products/1",
 							"host": [
-								"{{BASE_URL}}"
+								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"products",
@@ -424,9 +391,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/products/2",
+							"raw": "{{PRODUCT_URL}}/products/2",
 							"host": [
-								"{{BASE_URL}}"
+								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"products",
@@ -442,9 +409,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_URL}}/products?category=LANCHE",
+							"raw": "{{PRODUCT_URL}}/products?category=LANCHE",
 							"host": [
-								"{{BASE_URL}}"
+								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"products"
@@ -467,7 +434,6 @@
 			"listen": "prerequest",
 			"script": {
 				"type": "text/javascript",
-				"packages": {},
 				"exec": [
 					""
 				]
@@ -477,7 +443,6 @@
 			"listen": "test",
 			"script": {
 				"type": "text/javascript",
-				"packages": {},
 				"exec": [
 					""
 				]
@@ -489,6 +454,16 @@
 			"key": "BASE_URL",
 			"value": "http://localhost:8080",
 			"type": "string"
+		},
+		{
+			"key": "PRODUCT_URL",
+			"value": "http://localhost:8081",
+			"type": "default"
+		},
+		{
+			"key": "ORDER_URL",
+			"value": "http://localhost:8082",
+			"type": "default"
 		}
 	]
 }
